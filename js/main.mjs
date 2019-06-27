@@ -41,6 +41,20 @@ const buildToDoItem = (getList) => {
   }
 
 
+  //remove item
+  const removeButtonItem = todoItemFragment.querySelector('#postItemRemove');
+  if (removeButtonItem) {
+    removeButtonItem.addEventListener(
+      'click',
+      (e) => {
+        e.stopPropagation();
+        handlerRemoveButtonClick(getList.id);
+      }
+    );
+    removeButtonItem.removeAttribute('id');
+  }
+
+
   return todoItemElement;
 }
 
@@ -56,6 +70,14 @@ const renderList = (postList) => {
     }
   }
 };
+
+const handlerRemoveButtonClick = (id) => {
+  console.log(id);
+  const confirmMessenger = "This item will be deleted";
+  if (window.confirm(confirmMessenger)) {
+    postApi.remove(id);
+  }
+}
 
 // -----------------------
 // MAIN LOGIC
