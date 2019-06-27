@@ -40,8 +40,18 @@ const buildToDoItem = (getList) => {
     timeDateItem.innerText = utils.formatDate(getList.updatedAt);
   }
 
+  //add event click going to post detail
+  if (todoItemElement) {
+    todoItemElement.addEventListener(
+      'click',
+      (e) => {
+        const postURL = `post-detail.html?postId=${getList.id}`;
+        window.location.href = postURL;
+      }
+    )
+  }
 
-  //remove item
+  //add event remove item click
   const removeButtonItem = todoItemFragment.querySelector('#postItemRemove');
   if (removeButtonItem) {
     removeButtonItem.addEventListener(
@@ -58,7 +68,7 @@ const buildToDoItem = (getList) => {
   return todoItemElement;
 }
 
-
+//render post list
 const getListElemnet = () => document.querySelector('ul#postsList');
 const renderList = (postList) => {
   const postListElement = getListElemnet();
@@ -71,11 +81,13 @@ const renderList = (postList) => {
   }
 };
 
-const handlerRemoveButtonClick = (id) => {
-  console.log(id);
+//handler remove item
+const handlerRemoveButtonClick = async (id) => {
+  //console.log(id);
   const confirmMessenger = "This item will be deleted";
   if (window.confirm(confirmMessenger)) {
-    postApi.remove(id);
+    await postApi.remove(id);
+    window.location.reload();
   }
 }
 

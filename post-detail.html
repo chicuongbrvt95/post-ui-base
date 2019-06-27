@@ -23,6 +23,7 @@
   <!-- Internal CSS -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/post-detail.css">
+  <link href="node_modules/lightbox2/dist/css/lightbox.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,7 +67,6 @@
 
           <div class="post-content-wrapper">
             <p id="postDetailDescription"></p>
-
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Non totam pariatur quibusdam tenetur nemo
               tempora incidunt ex doloremque exercitationem dicta. Corporis fuga totam nulla voluptatibus possimus
@@ -78,9 +78,9 @@
               iusto dolorum rem, non error, saepe quia dignissimos quas ducimus aliquid. Praesentium ea aspernatur vero
               deserunt.
             </p>
-
-            <img class="post-image" src="https://picsum.photos/1368/800" alt="Picsum photos">
-
+            <a href="https://picsum.photos/1368/800" data-lightbox="roadtrip">
+              <img class="post-image" src="https://picsum.photos/1368/800" alt="Picsum photos">
+            </a>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci suscipit inventore hic tenetur, dolor
               iusto dolorum rem, non error, saepe quia dignissimos quas ducimus aliquid. Praesentium ea aspernatur vero
@@ -98,9 +98,9 @@
               iusto dolorum rem, non error, saepe quia dignissimos quas ducimus aliquid. Praesentium ea aspernatur vero
               deserunt.
             </p>
-
-            <img class="post-image" src="https://picsum.photos/1368/1000" alt="Picsum photos">
-
+            <a href="https://picsum.photos/1368/1000" data-lightbox="roadtrip">
+              <img class="post-image" src="https://picsum.photos/1368/1000" alt="Picsum photos">
+            </a>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci suscipit inventore hic tenetur, dolor
               iusto dolorum rem, non error, saepe quia dignissimos quas ducimus aliquid. Praesentium ea aspernatur vero
@@ -119,6 +119,7 @@
 
   <!-- Scripts should be placed here to prevent blocking render UI -->
   <script type="module" src="js/post-detail.mjs"></script>
+  <script src="node_modules/lightbox2/dist/js/lightbox-plus-jquery.js"></script>
 </body>
 
 </html>
