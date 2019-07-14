@@ -102,3 +102,17 @@
 .posts-nav .page-item:not(.active) .page-link:hover {
   color: rgba(255, 106, 1, 1);
 }
+
+.postLoader {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.loader {
+  position: relative;
+}

@@ -2,7 +2,7 @@ import postApi from "./api/postApi.js";
 import utils from "./utils.js";
 
 const renderPost = (post) => {
-    console.log(post);
+    //console.log(post);
 
     //set banner image
     utils.setBackgroundImageByElementId('postHeroImage', post.imageUrl);
@@ -29,8 +29,6 @@ const renderEditLink = (post) => {
         editLink.innerHTML = '<i class="fas fa-edit">Edit post</i>';
     }
 }
-
-
 
 
 

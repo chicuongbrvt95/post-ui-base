@@ -64,6 +64,20 @@ const buildToDoItem = (getList) => {
     removeButtonItem.removeAttribute('id');
   }
 
+  //add event update item click
+  const editButtonItem = todoItemFragment.querySelector('#postItemEdit');
+  if (editButtonItem) {
+    editButtonItem.addEventListener(
+      'click',
+      (e) => {
+        e.stopPropagation();
+        const postURL = `add-edit-post.html?postId=${getList.id}`;
+        window.location.href = postURL;
+      }
+    );
+    editButtonItem.removeAttribute('id');
+  }
+
 
   return todoItemElement;
 }
@@ -98,10 +112,12 @@ const init = async () => {
   // Write your logic here ....
 
   const postList = await postApi.getAll();
-  console.log(postList);
+  // console.log(postList);
   renderList(postList);
 
-
+  // hidden loader
+  const loader = document.querySelector('.postLoader');
+  loader.classList.add('invisible');
 
 };
 
