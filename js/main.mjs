@@ -119,6 +119,16 @@ const init = async () => {
   const loader = document.querySelector('.postLoader');
   loader.classList.add('invisible');
 
+  anime({
+    targets: '#postsList li',
+    translateY: [
+      { value: 100, duration: 0 },
+      { value: 0, duration: 500 },
+    ],
+    delay: anime.stagger(200),
+    easing: 'linear'
+  });
+
 };
 
 init();
